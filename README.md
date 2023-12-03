@@ -5,4 +5,4 @@ Hard Sphere Model
 Hard sphere model is a statistical mechanical model to describe the simplest non-overlapping interactions between particles. And it can be served as a coarse grain model. 
 Phase transition has been observed in HS system where compressing the system (practically by shrinking the box size) transform the system from liquid state to crystalline, passing through freezing point and melting point. 
 ![image](https://github.com/ccyehintx/Soft_Shell_project/assets/124641066/70e5c577-7f41-43a8-a5a7-4c1750b6dae8)
-However, the simplicity of the HS model limits the usage in the real world system
+However, the simplicity of the HS model limits the usage in the real world system, therefore a more realistic model is introduced and implemented in this project
