@@ -50,6 +50,7 @@ Another theoretical approach to identify the phase transition point is via plott
 
 Results:
 
+
 References:
 [1] Kumar, Rajesh et al. Springer Nature Singapore, 2022. 205-215.
 [2] William’s course materials: https://www.wgilpin.com/cphy/talks/html_static/monte_carlo_metropolis.html
