@@ -18,3 +18,41 @@ If the two particles overlap within the soft-shell region, a random number will 
 
 In analogy with the HS system, it is worth investigating whether similar phase transition can be observed in the soft-shell HS system.
 
+Computational Scheme:
+
+![image](https://github.com/ccyehintx/Soft_Shell_project/assets/124641066/fe8f9628-9088-49f6-8018-2cb1f2028a22)
+
+The algorithm works as follows:
+
+1. The system is initialized with positions and velocities following Boltzmann distribution
+
+2. The positions are updated based on the given time step and the velocities
+
+3. All the pair distances are checked and random numbers are generated to model the probability:
+   If distance > outer radius: No change on the velocities
+   If Outer > distance > Inner & softness > random number: No change on the velocities
+   If Outer > distance > Inner & softness < random number: Elastic collision (velocities swap)
+   If distance < Inner: Elastic collision (velocities swap)
+
+4. Update the velocities and go back to step 2 until N cycles are completed
+
+5. After the cycles are completed, analyse the radial distribution functions and fluxes.
+
+6. Restart with a box size (different packing fractions)
+
+Analysing the Results:
+
+According to glassy dynamics, the phase transitions can be obseved from the location of the first minimum of the g(r) with the given packing fraction. The location will be plotted against the respective packing fraction and the point where linearity is broken can be regarded as the phase transition point.
+
+The location of the minimum can be found via polynomial fitting to the fifth order
+
+Another theoretical approach to identify the phase transition point is via plotting the pressure-packing fraction plot. The pressure can be computationally obtained from logging the flux of the particles (how many particles jump out of the simulation box). And this flux can be statistical mechanically treated to compute pressure.
+
+Results:
+
+References:
+[1] Kumar, Rajesh et al. Springer Nature Singapore, 2022. 205-215.
+[2] William’s course materials: https://www.wgilpin.com/cphy/talks/html_static/monte_carlo_metropolis.html
+[3] Singh, Rakesh S., and Rigoberto Hernandez. Chemical Physics Letters 708 (2018): 233-240.
+[4] Ojovan, Michael I., and Dmitri V. Louzguine-Luzgin. The Journal of Physical Chemistry B 124.15 (2020): 3186-3194
+
