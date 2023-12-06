@@ -42,11 +42,30 @@ The algorithm works as follows:
 
 **Analysing the Results:**
 
-According to glassy dynamics, the phase transitions can be obseved from the location of the first minimum of the g(r) with the given packing fraction. The location will be plotted against the respective packing fraction and the point where linearity is broken can be regarded as the phase transition point.
+We will calculate the radial distribution function, $g(r)$, from our simulation and focus on the location of the first minimum of $g(r)$ $i.e.$ $g(r=r_{min})$, because $r_{min}$ represents the average distance between particles and can be used as a good physical quantity characterising the macroscopic state of the system. In this project, we will change the packing fraction and the temperature and record the position of $r_{min}$. By tracking the position of $r_{min}$, we are able to find the phase transition point of the system.
 
-The location of the minimum can be found via polynomial fitting to the fifth order
+1. Changing the packing fraction
+
+To find the first minimum of $g(r)$, we use a polynomial function to fit $g(r)$. It is shown that a fifth-degree polynomial is good enough to fit our data, and we can use this function to find the minimum.
+<img width="1004" alt="polynomial fitting" src="https://github.com/ccyehintx/Soft_Shell_project/assets/121147391/dc2e50a8-92b0-409c-82e9-313f22edf1a2">
+<img width="432" alt="minimum" src="https://github.com/ccyehintx/Soft_Shell_project/assets/121147391/35f8ac28-7424-4f07-a494-9f6807e0c3c8">
+
+We can use this method to find $r_{min}$ of different packing fraction. A $r_{min}$ vs packing fraction plot is shown below. It shows that the linearity is broken while the packing fraction approches 0.58, and this point can be regarded as the phase transition point.
+
+![change phi gr](https://github.com/ccyehintx/Soft_Shell_project/assets/121147391/75a13f74-38ea-4bb4-9952-93a41c0c4f52)
+
+![change phi rmin](https://github.com/ccyehintx/Soft_Shell_project/assets/121147391/f2df82ab-9132-4e85-b8ab-90911a676f42)
+
+2. Changing the temperatuer
+
+In this part, we will change the temperature and find the corresponding phase transition point. Our data shows that when the temperature goes to 5.2, a phase transition happens. Since $r_{min}$ increases rapidly with the temperature, we think it's a phase transition from liquid to gas.
+![change t gr](https://github.com/ccyehintx/Soft_Shell_project/assets/121147391/2cbeab5f-64bc-4b6e-a351-cbf3ad916ae0)
+![cahnge t rmin](https://github.com/ccyehintx/Soft_Shell_project/assets/121147391/8fb91e14-5618-4766-8b13-b765d933fde0)
+
+
 
 Another theoretical approach to identify the phase transition point is via plotting the pressure-packing fraction plot. The pressure can be computationally obtained from logging the flux of the particles (how many particles jump out of the simulation box). And this flux can be statistical mechanically treated to compute pressure.
+
 
 
 
